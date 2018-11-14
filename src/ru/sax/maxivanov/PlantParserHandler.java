@@ -27,8 +27,11 @@ public class PlantParserHandler extends DefaultHandler {
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
         if (qName.equalsIgnoreCase("Plant")) {
             String id = attributes.getValue("id");
+            //System.out.println(id);
             plant = new Plant();
-            plant.setId(Integer.parseInt(id));
+            if (id instanceof String) {
+                plant.setId(Integer.valueOf(id));
+            }
             if (plants == null) {
                 plants = new ArrayList<>();
             }
@@ -66,7 +69,7 @@ public class PlantParserHandler extends DefaultHandler {
             plant.setZone(new String(ch, start, length));
             bZone = false;
         } else if (bLight) {
-            plant.setZone(new String(ch, start, length));
+            plant.setLight(new String(ch, start, length));
             bLight = false;
         } else if (bPrice) {
             plant.setPrice(new String(ch, start, length));

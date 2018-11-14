@@ -78,9 +78,9 @@ public class Plant {
         return "Plant: " + " id= " + this.id + ' ' +
                 "common= " + this.common + ' ' +
                 ", botanical= " + this.botanical + ' ' +
-                ", zone='" + this.zone + ' ' +
-                ", light='" + this.light + ' ' +
-                ", price='" + this.price + ' ' +
-                ", availavility='" + this.availavility + '\n';
+                ", zone= " + this.zone + ' ' +
+                ", light= " + this.light + ' ' +
+                ", price= " + this.price + ' ' +
+                ", availavility= " + this.availavility + '\n';
     }
 }
