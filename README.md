@@ -69,14 +69,34 @@ javax.xml.parsers.*;
         } 
     }
 ```
-3.1. ```java SAXParserFactory saxParserFactory = SAXParserFactory.newInstance(); ```
+3.0. 
+```java
+SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
+```
 
-3.2. ```java SAXParser saxParser = saxParserFactory.newSAXParser(); ```
+3.1.
+```java
+saxParserFactory.setValidating(true);//optional -default is non-validating
+```
 
-3.3. ```java Handler handler = new Handler(); ```
+3.2. 
+```java 
+SAXParser saxParser = saxParserFactory.newSAXParser();
+```
 
-3.4. ```java saxParser.parse(XML_PATH, handler); ```
+3.3. 
+```java 
+Handler handler = new Handler(); 
+```
 
-3.5. ```java ArrayList<pars_obj> obj = handler.getPars_obj_array(); ```
+3.4. 
+```java 
+saxParser.parse(XML_PATH, handler); 
+```
+
+3.5. 
+```java
+ArrayList<pars_obj> obj = handler.getPars_obj_array();
+```
 
 3.6. Можно работать с obj - коллекцией объектов полученных с помощью SAX парсера
