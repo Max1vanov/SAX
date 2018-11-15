@@ -11,6 +11,7 @@ public class SaxTest {
 
     public static void main(String[] args) {
         SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
+        //saxParserFactory.setValidating(true);//optional -default is non-validating
         try {
             SAXParser saxParser = saxParserFactory.newSAXParser();
             PlantParserHandler handler = new PlantParserHandler();
